@@ -9,7 +9,7 @@ import pages.MainPage;
 import pages.PersonalAccountPage;
 import pages.RegistrationPage;
 
-public class redirectionTests {
+public class RedirectionTests {
     private WebDriver driver;
     private String postfix;
     private MainPage mainPage;

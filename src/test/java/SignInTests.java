@@ -10,7 +10,7 @@ import pages.RecoverPasswordPage;
 import pages.RegistrationPage;
 
 
-public class signInTests {
+public class SignInTests {
     private WebDriver driver;
     private String postfix;
 
@@ -31,7 +31,7 @@ public class signInTests {
         mainPage.signIn();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillCredentialsAndSignIn("email"+postfix+"@gmail.com", "1234567");
-        loginPage.checkSignIn();
+        loginPage.checkSignIn("email"+postfix+"@gmail.com");
     }
 
     @Test
@@ -41,7 +41,7 @@ public class signInTests {
         mainPage.goToPersonalAccount();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillCredentialsAndSignIn("email"+postfix+"@gmail.com", "1234567");
-        loginPage.checkSignIn();
+        loginPage.checkSignIn("email"+postfix+"@gmail.com");
     }
 
     @Test
@@ -50,7 +50,7 @@ public class signInTests {
         registrationPage.signIn();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillCredentialsAndSignIn("email"+postfix+"@gmail.com", "1234567");
-        loginPage.checkSignIn();
+        loginPage.checkSignIn("email"+postfix+"@gmail.com");
     }
 
     @Test
@@ -60,10 +60,8 @@ public class signInTests {
         recoverPasswordPage.signIn();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillCredentialsAndSignIn("email"+postfix+"@gmail.com", "1234567");
-        loginPage.checkSignIn();
-        System.out.println(5);
+        loginPage.checkSignIn("email"+postfix+"@gmail.com");
     }
-
 
     @After
     public void teardown() {

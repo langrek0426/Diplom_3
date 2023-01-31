@@ -14,10 +14,9 @@ public class MainPage {
     private By banTab = By.xpath(".//span[text() = 'Булки']");
     private By sauceTab = By.xpath(".//span[text() = 'Соусы']");
     private By fillingTab = By.xpath(".//span[text() = 'Начинки']");
-    private By banText = By.xpath(".//h2[text() = 'Булки']");
-    private By sauceText = By.xpath(".//h2[text() = 'Соусы']");
-    private By fillingText = By.xpath(".//h2[text() = 'Начинки']");
-
+    private By banSelected = By.xpath(".//div[contains(@class, 'type_current')]/span[text() = 'Булки']");
+    private By sauceSelected = By.xpath(".//div[contains(@class, 'type_current')]/span[text() = 'Соусы']");
+    private By fillingSelected = By.xpath(".//div[contains(@class, 'type_current')]/span[text() = 'Начинки']");
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -45,8 +44,8 @@ public class MainPage {
     }
 
     public void checkBanTab () {
-        boolean isPresent = driver.findElement(banText).isDisplayed();
-        Assert.assertTrue(isPresent);
+        boolean isSelected = driver.findElement(banSelected).isDisplayed();
+        Assert.assertTrue("Переход к разделу Булки не работает", isSelected);
     }
 
     public void clickOnSauceTab () {
@@ -54,8 +53,8 @@ public class MainPage {
     }
 
     public void checkSauceTab () {
-        boolean isPresent = driver.findElement(sauceText).isDisplayed();
-        Assert.assertTrue(isPresent);
+        boolean isSelected = driver.findElement(sauceSelected).isDisplayed();
+        Assert.assertTrue("Переход к разделу Соусы не работает", isSelected);
     }
 
     public void clickOnFillingTab () {
@@ -63,8 +62,8 @@ public class MainPage {
     }
 
     public void checkFillingTab () {
-        boolean isPresent = driver.findElement(fillingText).isDisplayed();
-        Assert.assertTrue(isPresent);
+        boolean isSelected = driver.findElement(fillingSelected).isDisplayed();
+        Assert.assertTrue("Переход к разделу Начинки не работает", isSelected);
     }
 
 }

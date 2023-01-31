@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.MainPage;
 
-public class constructionTabsTests {
+public class ConstructionTabsTests {
     private WebDriver driver;
     private MainPage mainPage;
 
